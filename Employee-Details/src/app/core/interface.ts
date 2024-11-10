@@ -1,13 +1,11 @@
-export interface resultData {
+export interface ResultData {
   empCode: string;
   empDesignation: string;
   empEmailId: string;
-  empId: number;
+  id: string;
   empName: string;
   role: string;
 }
 export interface Data {
-  message: string;
-  result: boolean;
-  data: resultData[];
+  data: ResultData[];
 }

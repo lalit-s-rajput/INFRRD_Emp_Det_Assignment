@@ -2,4 +2,13 @@
   <div class="filter-Container">
     <h2>Filter</h2>
   </div>
+  <div class="results-container">
+    <div *ngFor="let item of resultData$ | async">
+      <app-details-card
+        [empDetails]="item"
+        (deleteEmp)="deleteEmp($event)"
+        (editEmpData)="editEmpData($event)"
+      ></app-details-card>
+    </div>
+  </div>
 </div>

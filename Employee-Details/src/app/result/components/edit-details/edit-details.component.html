@@ -1,1 +1,58 @@
-<p>edit-details works!</p>
+<div class="edit-modal">
+  <div class="modal-content">
+    <ng-content></ng-content>
+    <div class="form-container">
+      <form [formGroup]="modalForm" (ngSubmit)="onSubmit()">
+        <div class="single-form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+        <div class="text-error" *ngIf="getControls.name.errors?.required">
+          <p>This field is required</p>
+        </div>
+
+        <div class="single-form-group">
+          <label for="empID">EmpId:</label>
+          <input type="text" id="empID" formControlName="id" />
+        </div>
+        <div class="text-error" *ngIf="getControls.id.errors?.required">
+          <p>This field is required</p>
+        </div>
+
+        <div class="single-form-group">
+          <label for="code">Code:</label>
+          <input type="text" id="code" formControlName="code" />
+        </div>
+        <div class="text-error" *ngIf="getControls.code.errors?.required">
+          <p>This field is required</p>
+        </div>
+
+        <div class="single-form-group">
+          <label for="designation">Designation:</label>
+          <input type="text" id="designation" formControlName="designation" />
+        </div>
+        <div
+          class="text-error"
+          *ngIf="getControls.designation.errors?.required"
+        >
+          <p>This field is required</p>
+        </div>
+
+        <div class="single-form-group">
+          <label for="role">Role:</label>
+          <input type="text" id="role" formControlName="role" />
+        </div>
+        <div class="text-error" *ngIf="getControls.role.errors?.required">
+          <p>This field is required</p>
+        </div>
+
+        <div class="button-container">
+          <button class="edit-button" [disabled]="!modalForm.valid">
+            Update
+          </button>
+          <button class="delete-button" (click)="closeModal()">cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
