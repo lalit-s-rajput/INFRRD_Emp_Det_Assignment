@@ -1,0 +1,63 @@
+@import '../details-card/details-card.component.scss';
+
+.button-container {
+    @include flexRow;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-button {
+    @include commonButtonCss;
+}
+
+.edit-button:disabled {
+    background-color: lightgray;
+    cursor: default;
+}
+
+.delete-button {
+    @include commonButtonCss;
+    background-color: #FF4742;
+}
+
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 40%;
+    }
+
+    .single-form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        font-size: x-large;
+        color: gray;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        font-size: x-large;
+    }
+
+    .text-error {
+        text-align: center;
+        color: red;
+    }
+}

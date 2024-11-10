@@ -1,1 +1,50 @@
-<p>details-card works!</p>
+<div class="card">
+  <div class="header">
+    <div class="image-section">
+      <img class="header-image" src="../../../../assets/1.png" alt="" />
+    </div>
+    <div class="name-section">
+      <h2>{{ _empDetails?.empName }}</h2>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="emp-id">
+      <span class="body-texts">emp-Id:</span>
+      <span class="text-value">{{ _empDetails?.id }}</span>
+    </div>
+    <div class="emp-code">
+      <span class="body-texts">emp-Code:</span>
+      <span class="text-value">{{ _empDetails?.empCode }}</span>
+    </div>
+    <div class="emp-designation">
+      <span class="body-texts">emp-Designation:</span>
+      <span class="text-value">{{ _empDetails?.empDesignation }}</span>
+    </div>
+    <div class="emp-role">
+      <span class="body-texts">emp-Role:</span>
+      <span class="text-value">{{ _empDetails?.role }}</span>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="email-section">
+      <div class="footer-img">
+        <img class="footer-img" src="../../../../assets/gmail.jpeg" alt="" />
+      </div>
+      <div class="footer-mail text-value">{{ _empDetails?.empEmailId }}</div>
+    </div>
+    <div class="button-container">
+      <button class="edit-button" (click)="editEmployee()">Edit</button>
+      <button class="delete-button" (click)="deleteEmployee()">Delete</button>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="showModal">
+  <div class="form-container">
+    <app-edit-details
+      [modalData]="_empDetails"
+      (closeMod)="closeModal($event)"
+      (formData)="getFormData($event)"
+    >
+    </app-edit-details>
+  </div>
+</ng-container>

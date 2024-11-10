@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "empName": "lamar",
+            "id": "1",
+            "empCode": "CT-1181",
+            "empEmailId": "lamar@123.com",
+            "empDesignation": "Software Developer",
+            "role": "Admin"
+        },
+        {
+            "empName": "khaled",
+            "id": "2",
+            "empCode": "CT-1171",
+            "empEmailId": "khalid@gmail.com",
+            "empDesignation": "Senior Software Developer",
+            "role": "Admin"
+        },
+        {
+            "empName": "omar",
+            "id": "3",
+            "empCode": "CT-1161",
+            "empEmailId": "meg@253.com",
+            "empDesignation": "Quality Assurance",
+            "role": "Admin"
+        },
+        {
+            "empName": "menna",
+            "id": "4",
+            "empCode": "CT-1121",
+            "empEmailId": "sdsf@gg.com",
+            "empDesignation": "UI/UX Designer",
+            "role": "Admin"
+        },
+        {
+            "empName": "Suntests",
+            "id": "5",
+            "empCode": "CT-871",
+            "empEmailId": "sun@gmail.com",
+            "empDesignation": "Technical Lead",
+            "role": "Admin"
+        },
+        {
+            "empName": "Jaleed khan",
+            "id": "6",
+            "empCode": "CT-801",
+            "empEmailId": "jamari@gmail.com",
+            "empDesignation": "Manager",
+            "role": "TL"
+        },
+        {
+            "empName": "Karan",
+            "id": "7",
+            "empCode": "CT-471",
+            "empEmailId": "karan@gmail.com",
+            "empDesignation": "UI/UX Designer",
+            "role": "Admin"
+        }
+    ]
+}
