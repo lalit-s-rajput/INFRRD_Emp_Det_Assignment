@@ -6,6 +6,10 @@ export interface ResultData {
   empName: string;
   role: string;
 }
+export interface filterState {
+  searchString: string;
+  designation: String;
+}
 export interface Data {
   data: ResultData[];
 }

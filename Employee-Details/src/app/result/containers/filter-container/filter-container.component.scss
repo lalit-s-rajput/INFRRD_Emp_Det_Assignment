@@ -1,0 +1,42 @@
+.filter-view {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    border: 1px solid black;
+
+    .search-filter {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .search {
+        width: 90%;
+        height: 40px;
+    }
+
+    .designation-select {
+        width: 90%;
+        margin: 10px;
+        height: 45px;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: flex-end;
+    }
+
+    .reset-all {
+        width: 50%;
+        height: 40px;
+        background-color: #04AA6D;
+        font-size: x-large;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+}

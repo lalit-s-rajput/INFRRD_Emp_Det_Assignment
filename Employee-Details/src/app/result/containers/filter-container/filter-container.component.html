@@ -1,1 +1,28 @@
-<p>filter-container works!</p>
+<div class="filter-view">
+  <div class="search-filter">
+    <input
+      #searchInput
+      class="search"
+      type="text"
+      placeholder="search by name or email"
+      (input)="search($event)"
+    />
+  </div>
+  <div class="designation-filter">
+    <select
+      #selectValue
+      (change)="getSelectedData($event)"
+      class="designation-select"
+      name=""
+      id=""
+    >
+      <option value="">Select</option>
+      <option [value]="item" *ngFor="let item of designations">
+        {{ item }}
+      </option>
+    </select>
+  </div>
+  <div class="button-container">
+    <button class="reset-all" (click)="resetAll()">Reset All</button>
+  </div>
+</div>
