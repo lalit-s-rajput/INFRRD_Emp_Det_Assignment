@@ -1,9 +1,14 @@
 <div class="results-page-container">
   <div class="filter-Container">
-    <h2>Filter</h2>
+    <app-filter-container
+      [designations]="_designationData | async"
+      (key)="searchFilter($event)"
+      (designation)="designationFilter($event)"
+      (reset)="resetAll()"
+    ></app-filter-container>
   </div>
   <div class="results-container">
-    <div *ngFor="let item of resultData$ | async">
+    <div *ngFor="let item of _resultData$ | async">
       <app-details-card
         [empDetails]="item"
         (deleteEmp)="deleteEmp($event)"
