@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ResultsService } from '../../services/results.service';
 import { BehaviorSubject } from 'rxjs';
-import { ResultData } from 'src/app/core/interface';
+import { filterState, ResultData } from 'src/app/core/interface';
 
 @Component({
   selector: 'app-result-container',
@@ -32,6 +32,9 @@ export class ResultContainerComponent implements OnInit, OnDestroy {
   }
   resetAll() {
     this.resultService.resetAllFilters();
+  }
+  allFilters(data: filterState) {
+    this.resultService.applyFilters(data);
   }
   ngOnDestroy(): void {
     this._resultData$.unsubscribe();
