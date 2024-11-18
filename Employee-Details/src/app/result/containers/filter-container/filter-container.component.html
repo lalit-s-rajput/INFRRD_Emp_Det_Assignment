@@ -5,17 +5,10 @@
       class="search"
       type="text"
       placeholder="search by name or email"
-      (input)="search($event)"
     />
   </div>
   <div class="designation-filter">
-    <select
-      #selectValue
-      (change)="getSelectedData($event)"
-      class="designation-select"
-      name=""
-      id=""
-    >
+    <select #selectValue class="designation-select" name="" id="">
       <option value="">Select</option>
       <option [value]="item" *ngFor="let item of designations">
         {{ item }}
@@ -23,6 +16,7 @@
     </select>
   </div>
   <div class="button-container">
+    <button class="filter-all" (click)="applyAll()">Apply Filters</button>
     <button class="reset-all" (click)="resetAll()">Reset All</button>
   </div>
 </div>

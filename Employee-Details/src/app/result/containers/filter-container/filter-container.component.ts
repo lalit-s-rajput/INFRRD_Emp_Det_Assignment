@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { filterState } from 'src/app/core/interface';
 
 @Component({
   selector: 'app-filter-container',
@@ -14,30 +15,21 @@ import {
 })
 export class FilterContainerComponent {
   @Input() designations: string[] | null = [];
-  @Output() key = new EventEmitter<string>();
-  @Output() designation = new EventEmitter<string>();
+  @Output() filterData = new EventEmitter<filterState>();
   @Output() reset = new EventEmitter();
   @ViewChild('searchInput', { static: true })
   searchInput!: ElementRef;
   @ViewChild('selectValue', { static: true })
   selectValue!: ElementRef;
-  search(event: any) {
-    let value = event.currentTarget.value;
-    console.log(value);
-    if (value.length > 2) {
-      this.key.emit(value);
-    }
-  }
-  getSelectedData(event: any) {
-    let value = event.target.value;
-    if (value) {
-      console.log(value);
-      this.designation.emit(value);
-    }
-  }
   resetAll() {
     this.searchInput.nativeElement.value = '';
     this.selectValue.nativeElement.value = '';
     this.reset.emit();
+  }
+  applyAll() {
+    this.filterData.emit({
+      searchString: this.searchInput.nativeElement.value,
+      designation: this.selectValue.nativeElement.value,
+    });
   }
 }

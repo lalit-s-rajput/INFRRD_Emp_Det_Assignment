@@ -10,9 +10,8 @@ export class ResultsService {
   resultsSubject$: BehaviorSubject<ResultData[]> = new BehaviorSubject<
     ResultData[]
   >([]);
-  resultsSubjectToShow$: BehaviorSubject<ResultData[]> = new BehaviorSubject<
-    ResultData[]
-  >([]);
+  resultsSubjectToShow$: BehaviorSubject<ResultData[] | []> =
+    new BehaviorSubject<ResultData[] | []>([]);
   designationsData$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>(
     []
   );
@@ -63,6 +62,7 @@ export class ResultsService {
         item.empName.toLowerCase().includes(keyData)
       );
     });
+    //return data;
     this.resultsSubjectToShow$.next(data);
   }
   designationFilter(designation: string) {
@@ -70,7 +70,18 @@ export class ResultsService {
     let data = this.resultsSubjectToShow$.value.filter((item) => {
       return item.empDesignation === designation;
     });
+    //return data;
     this.resultsSubjectToShow$.next(data);
+  }
+  applyFilters(filterData: filterState) {
+    // let filteredData: ResultData[] = [];
+    if (filterData.searchString) {
+      this.filterOnSearch(filterData.searchString);
+    }
+    if (filterData.designation) {
+      this.designationFilter(filterData.designation);
+    }
+    // this.resultsSubjectToShow$.next(filteredData);
   }
   setAllDesignations() {
     let data = this.resultsSubject$.value.reduce(

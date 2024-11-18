@@ -2,8 +2,7 @@
   <div class="filter-Container">
     <app-filter-container
       [designations]="_designationData | async"
-      (key)="searchFilter($event)"
-      (designation)="designationFilter($event)"
+      (filterData)="allFilters($event)"
       (reset)="resetAll()"
     ></app-filter-container>
   </div>

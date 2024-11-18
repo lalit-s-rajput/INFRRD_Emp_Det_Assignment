@@ -8,7 +8,7 @@ export interface ResultData {
 }
 export interface filterState {
   searchString: string;
-  designation: String;
+  designation: string;
 }
 export interface Data {
   data: ResultData[];
